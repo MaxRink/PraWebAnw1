@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<head>
+<title>CPU Anfahrtsskizze</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="de" />
+<meta name="generator" content="Easymap" />
+<link rel="stylesheet" type="text/css" href="assets/map.css" />
+
+<script type="text/javascript" src="assets/openlayers/OpenLayers.js"></script>
+<script type="text/javascript" src="https://www.openstreetmap.org/openlayers/OpenStreetMap.js"></script>
+<script type="text/javascript" src="assets/util.js"></script>
+ 
+<script type="text/javascript">
+//<![CDATA[
+
+var map;
+
+var showPopupOnHover = true;
+text = new Array("Informationen zur Karte anzeigen","Informationen zur Karte verstecken");
+
+function drawmap() {
+    OpenLayers.Lang.setCode('de');
+    
+    map = new OpenLayers.Map('map', {
+        projection: new OpenLayers.Projection("EPSG:900913"),
+        displayProjection: new OpenLayers.Projection("EPSG:4326"),
+        controls: [
+		new OpenLayers.Control.MouseDefaults(),
+		new OpenLayers.Control.Attribution()],
+        maxExtent:
+            new OpenLayers.Bounds(-20037508.34,-20037508.34,
+                                    20037508.34, 20037508.34),
+        numZoomLevels: 18,
+        maxResolution: 156543,
+        units: 'meters'
+    });
+
+
+
+// Noch mehr Kontrollelemente hinzufügen..
+map.addControl(new OpenLayers.Control.PanZoomBar());
+
+
+
+// Position und Zoomstufe der Karte
+lon = 9.95592;
+lat = 48.42289;
+zoom = 17; 
+
+checkForPermalink();
+
+
+
+
+// Layer hinzufügen
+
+layer_markers = new OpenLayers.Layer.Markers("Marker", { projection: new OpenLayers.Projection("EPSG:4326"),visibility: true, displayInLayerSwitcher: false });
+layer_vectors = new OpenLayers.Layer.Vector("Zeichnungen", { displayInLayerSwitcher: false } );map.addLayer(layer_vectors);map.addLayer(layer_markers)
+layers = new Array();
+layer_layerMapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik");
+map.addLayer(layer_layerMapnik)
+layers.push(new Array(layer_layerMapnik,'layer_layerMapnik'));
+setLayer(0);
+
+
+// An die richtige Stelle springen..
+jumpTo(lon,lat,zoom);
+
+// Benutzte Marker Icons hinzufügen..
+icons = new Array();
+icons[0] = new Array('https://openlayers.org/api/img/marker.png','21','25','0.5','1');
+icons[6] = new Array('https://openlayers.org/api/img/marker.png','16','28','0','1');
+icons[10] = new Array('https://openlayers.org/api/img/marker.png','20','24','0.5','0.5');
+
+
+// Marker hinzufügen
+addMarker(layer_markers,9.9584305476413,48.423189037006,"<b>Zufahrt verboten!</b><p />Die Zufahrt über diese Straßen ist verboten!",true,0);
+addMarker(layer_markers,9.9551797103201,48.421757915394,"<b>CPU</b><p />CPU Veranstaltungsort",true,10);
+addMarker(layer_markers,9.9555552195819,48.421928797705,"<b>Eingang</b><p />",false,6);
+
+
+geometries = new Array();geometries.push(drawLine([[9.9586880397076,48.419685921659],[9.9568963240853,48.420369475318],[9.9559736441845,48.421252385191],[9.9560594748727,48.421672474021],[9.9567139338726,48.422163759943],[9.9569499682662,48.422320400833],[9.9573362063634,48.422576721248],[9.9579155635105,48.422704880971],[9.9583232592804,48.422939839623],[9.9584305476413,48.423231756435]],{strokeColor:"#FF0000",strokeWidth: 15,fillColor: "#0000FF",fillOpacity: 0.4}));
+geometries.push(drawLine([[9.9577546309696,48.423673188431],[9.9574542235597,48.424043418761]],{strokeColor:"#0000FF",strokeWidth: 10,fillColor: "#0000FF",fillOpacity: 0.4}));
+geometries.push(drawLine([[9.9575722407579,48.425718914635],[9.9578619193314,48.425825707824],[9.9576473426097,48.426131847055],[9.9576258849378,48.426160325029],[9.9579155635114,48.426103369065],[9.9576473426097,48.42613896655],[9.957518596577,48.426017934998]],{strokeColor:"#0000FF",strokeWidth: 10,fillColor: "#0000FF",fillOpacity: 0.4}));
+geometries.push(drawLine([[9.9603510093018,48.425424638891],[9.9608659934326,48.424826589423],[9.9608445357608,48.424833709102],[9.9604153823181,48.424919145159],[9.9608552645971,48.424826589423],[9.9609947394653,48.425125615037]],{strokeColor:"#0000FF",strokeWidth: 10,fillColor: "#0000FF",fillOpacity: 0.4}));
+
+
+
+// Nochmal was..
+jumpTo(lon, lat, zoom);
+
+checkUtilVersion(4);
+}
+
+//]]>
+    </script>
+</head>
+<body onload="drawmap();">
+	
+	<div id="descriptionToggle" onclick="toggleInfo()">Informationen zur Karte anzeigen</div>
+	<div id="description" class="hide">Anfahrt zur CPU 18</div>
+	<div id="map"></div>
+	<div class="hide"><p>Wenn Sie diesen Text sehen, dann haben Sie die HTML-Datei ohne die zusätzlich benötigten Dateien geöffnet. Wenn Sie versucht haben die Karte herunterzuladen, wurde das Downloadfenster möglicherweise aus irgendeinem Grund nicht geöffnet. Speichern Sie in diesem Fall einfach diese Seite ab.</p><p>If you see this text, you opened the map HTML-File without the necessary files. If you tried to download the map, the download dialog may not have opened for some reason. In this case just save this page.</p></div>
+</body>
+</html>
