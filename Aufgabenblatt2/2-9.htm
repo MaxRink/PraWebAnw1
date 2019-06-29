@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>Aufgabe 2.9</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: top;
+            float: left;
+        }
+        .small-1 {
+            width: 100%;
+            
+        }
+
+        /* Mobile Styles */
+        @media only screen and (max-width: 400px) {
+            
+            body {
+                background-color: #F09A9D;
+                /* Red */
+            }
+        }
+
+        /* Tablet Styles */
+        @media only screen and (min-width: 401px) and (max-width: 960px) {
+            .medium-1 {
+                width: 50%;
+                color: violet;
+            }
+
+            .medium-2 {
+                width: 100%;
+            }
+            body {
+                background-color: #F5CF8E;
+                /* Yellow */
+            }
+        }
+
+        /* Desktop Styles */
+        @media only screen and (min-width: 941px) {
+            .large-1 {
+                width: 33%;
+                color: red;
+            }
+
+            .large-2 {
+                width: 50%;
+            }
+
+            .large-3 {
+                width: 100%;
+            }
+            body {
+                background-color: #B2D6FF;
+                /* Blue */
+            }
+        }
+
+        header {
+            background-color: red;
+        }
+
+        nav {
+            background-color: orange;
+        }
+
+        article:nth-of-type(1) {
+            background: blue;
+        }
+
+        article:nth-of-type(2) {
+            background: green;
+        }
+
+        aside {
+            background-color: violet;
+        }
+
+
+        footer {
+            background-color: yellow;
+        }
+
+
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="row">
+        <header class="small-1 medium-2 large-3 columns">
+            <strong>Header</strong>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd
+            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd gubergren, no sea
+            takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+            amet.
+        </header>
+    </div>
+
+    <div class="row">
+        <nav class="small-1 medium-2 large-3 columns">
+            <strong>Navi</strong> Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd
+            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </nav>
+    </div>
+
+    <div class="row">
+        <article class="small-1 medium-1 large-1 columns">
+            <strong>Inhalt</strong> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+            duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </article>
+
+        <article class="small-1 medium-1 large-1 columns">
+            <strong>Inhalt</strong> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+            duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </article>
+
+        <aside class="small-1 medium-2 large-1 columns">
+            <strong>Sidebar</strong> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+        </aside>
+    </div>
+
+    <div class="row">
+        <footer class="small-1 medium-2 large-3 columns">
+            <strong>Footer</strong> Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd
+            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd gubergren, no sea
+            takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+            amet. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd
+            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd gubergren, no sea
+            takimata sanctus est Lorem ipsum dolor sit amet.
+        </footer>
+    </div>
+
+</body>
+
+</html>

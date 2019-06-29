@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>Aufgabe 2.9</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border-radius: 5px
+        }
+
+        .section {
+            width: 70%;
+        }
+
+        .aside {
+            width: 30%;
+        }
+
+        .full {
+            width: 100%;
+        }
+
+        .seventyfive {
+            width: 75%;
+        }
+
+        .fifty {
+            width: 50%;
+        }
+
+        .bar {
+            background: gray;
+            margin: 1em;
+            display: inline-block;
+            z-index: 1;
+            display: flex;
+
+        }
+
+        .box {
+            height: 50px;
+            margin: 4px;
+            z-index: 2;
+            background: green;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+ 
+
+        }
+    </style>
+</head>
+
+<body>
+    <p>100% Wide Container</p>
+    <div class="full bar">
+        <div class="section box">Section</div>
+        <div class="aside box">Aside</div>
+    </div>
+    <p>75% Wide Container</p>
+    <div class="seventyfive bar">
+        <div class="section box">Section</div>
+        <div class="aside box">Aside</div>
+    </div>
+    <p>50% Wide Container</p>
+    <div class="fifty bar">
+        <div class="section box">Section</div>
+        <div class="aside box">Aside</div>
+    </div>
+</body>
+
+</html>

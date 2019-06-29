@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Float Demo</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .containter {
+            margin: 2em 0;
+            border: 2px solid black;
+        }
+
+        .box {
+            float: none;
+            width: 200px;
+            height: 150px;
+            margin: 10px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .box:nth-of-type(1) {
+            background: red;
+            float: left;
+        }
+
+        .box:nth-of-type(2) {
+            background: gold;
+            float: left;
+        }
+
+        .box:nth-of-type(3) {
+            background: lightgreen;
+            clear: none;
+            position: relative;
+            z-index: 1;
+            height: 320px
+        }
+
+        @media only screen and (min-width: 500px) {
+
+            .box:nth-of-type(3) {
+                background: lightgreen;
+                clear: none;
+                position: relative;
+                z-index: 1;
+                width: 410px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <hr>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+</body>
+
+</html>
